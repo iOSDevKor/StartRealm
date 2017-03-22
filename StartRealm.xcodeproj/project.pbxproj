@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		33326E3CA9378D6B7B33D46F /* Pods_StartRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE16F41B2BDFE76F1F5725E /* Pods_StartRealm.framework */; };
 		5348B7231E54856300D11430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5348B7221E54856300D11430 /* AppDelegate.swift */; };
-		5348B7251E54856300D11430 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5348B7241E54856300D11430 /* ViewController.swift */; };
 		5348B7281E54856300D11430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5348B7261E54856300D11430 /* Main.storyboard */; };
 		5348B72A1E54856300D11430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5348B7291E54856300D11430 /* Assets.xcassets */; };
 		5348B72D1E54856300D11430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5348B72B1E54856300D11430 /* LaunchScreen.storyboard */; };
+		E95F3B0E1E7FFBA9007E652D /* StartRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95F3B0D1E7FFBA9007E652D /* StartRealm.swift */; };
+		E9BB634F1E8057C100704115 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BB634E1E8057C100704115 /* ListTableViewController.swift */; };
+		E9BB63511E80D89800704115 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BB63501E80D89800704115 /* PhotoCollectionViewController.swift */; };
+		E9BB63531E80E87800704115 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BB63521E80E87800704115 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +24,14 @@
 		4CE16F41B2BDFE76F1F5725E /* Pods_StartRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StartRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5348B71F1E54856300D11430 /* StartRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5348B7221E54856300D11430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5348B7241E54856300D11430 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5348B7271E54856300D11430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5348B7291E54856300D11430 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5348B72C1E54856300D11430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5348B72E1E54856300D11430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E95F3B0D1E7FFBA9007E652D /* StartRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartRealm.swift; sourceTree = "<group>"; };
+		E9BB634E1E8057C100704115 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		E9BB63501E80D89800704115 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		E9BB63521E80E87800704115 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 		5348B7161E54856300D11430 = {
 			isa = PBXGroup;
 			children = (
+				E95F3B041E7FB76B007E652D /* SupportingFiles */,
 				5348B7211E54856300D11430 /* StartRealm */,
 				5348B7201E54856300D11430 /* Products */,
 				7613816EC17F663780AC8B8C /* Pods */,
@@ -61,12 +68,11 @@
 		5348B7211E54856300D11430 /* StartRealm */ = {
 			isa = PBXGroup;
 			children = (
-				5348B7221E54856300D11430 /* AppDelegate.swift */,
-				5348B7241E54856300D11430 /* ViewController.swift */,
+				E95F3B0D1E7FFBA9007E652D /* StartRealm.swift */,
+				E9BB634E1E8057C100704115 /* ListTableViewController.swift */,
+				E9BB63501E80D89800704115 /* PhotoCollectionViewController.swift */,
+				E9BB63521E80E87800704115 /* PhotoCollectionViewCell.swift */,
 				5348B7261E54856300D11430 /* Main.storyboard */,
-				5348B7291E54856300D11430 /* Assets.xcassets */,
-				5348B72B1E54856300D11430 /* LaunchScreen.storyboard */,
-				5348B72E1E54856300D11430 /* Info.plist */,
 			);
 			path = StartRealm;
 			sourceTree = "<group>";
@@ -86,6 +92,18 @@
 				4CE16F41B2BDFE76F1F5725E /* Pods_StartRealm.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E95F3B041E7FB76B007E652D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5348B7221E54856300D11430 /* AppDelegate.swift */,
+				5348B7291E54856300D11430 /* Assets.xcassets */,
+				5348B72B1E54856300D11430 /* LaunchScreen.storyboard */,
+				5348B72E1E54856300D11430 /* Info.plist */,
+			);
+			name = SupportingFiles;
+			path = StartRealm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +141,7 @@
 				TargetAttributes = {
 					5348B71E1E54856300D11430 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 77QBV58QPQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -211,8 +230,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5348B7251E54856300D11430 /* ViewController.swift in Sources */,
+				E9BB63511E80D89800704115 /* PhotoCollectionViewController.swift in Sources */,
+				E9BB63531E80E87800704115 /* PhotoCollectionViewCell.swift in Sources */,
+				E95F3B0E1E7FFBA9007E652D /* StartRealm.swift in Sources */,
 				5348B7231E54856300D11430 /* AppDelegate.swift in Sources */,
+				E9BB634F1E8057C100704115 /* ListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +356,7 @@
 			baseConfigurationReference = 2256052DD64349FBD37890F4 /* Pods-StartRealm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 77QBV58QPQ;
 				INFOPLIST_FILE = StartRealm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yagom.StartRealm;
@@ -347,6 +370,7 @@
 			baseConfigurationReference = 37EDB7DEF66EA5E9637FAD09 /* Pods-StartRealm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 77QBV58QPQ;
 				INFOPLIST_FILE = StartRealm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yagom.StartRealm;
@@ -374,6 +398,7 @@
 				5348B7331E54856300D11430 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
