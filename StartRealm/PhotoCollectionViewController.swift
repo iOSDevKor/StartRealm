@@ -12,8 +12,8 @@ import RealmSwift
 class PhotoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegateFlowLayout {
     
     var selectedAlbum: Album!
-    private var startRealm: Realm!
-    private var photolList: List<Photos>!
+    var startRealm: Realm!
+    var photolList: List<Photos>!
     var token: NotificationToken?
     
     override func viewDidLoad() {
