@@ -16,6 +16,7 @@
 		E9BB634F1E8057C100704115 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BB634E1E8057C100704115 /* ListTableViewController.swift */; };
 		E9BB63511E80D89800704115 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BB63501E80D89800704115 /* PhotoCollectionViewController.swift */; };
 		E9BB63531E80E87800704115 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BB63521E80E87800704115 /* PhotoCollectionViewCell.swift */; };
+		E9BB63551E82BC7D00704115 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BB63541E82BC7D00704115 /* AlbumTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E9BB634E1E8057C100704115 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		E9BB63501E80D89800704115 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		E9BB63521E80E87800704115 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		E9BB63541E82BC7D00704115 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				E95F3B0D1E7FFBA9007E652D /* StartRealm.swift */,
 				E9BB634E1E8057C100704115 /* ListTableViewController.swift */,
+				E9BB63541E82BC7D00704115 /* AlbumTableViewCell.swift */,
 				E9BB63501E80D89800704115 /* PhotoCollectionViewController.swift */,
 				E9BB63521E80E87800704115 /* PhotoCollectionViewCell.swift */,
 				5348B7261E54856300D11430 /* Main.storyboard */,
@@ -235,6 +238,7 @@
 				E95F3B0E1E7FFBA9007E652D /* StartRealm.swift in Sources */,
 				5348B7231E54856300D11430 /* AppDelegate.swift in Sources */,
 				E9BB634F1E8057C100704115 /* ListTableViewController.swift in Sources */,
+				E9BB63551E82BC7D00704115 /* AlbumTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

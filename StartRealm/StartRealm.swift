@@ -9,15 +9,18 @@
 import Foundation
 import RealmSwift
 
-class AlbumList: Object {
+class Album: Object {
     dynamic var title: String = ""
-// 마이그레이션할때 추가할 것
-//    dynamic var subTitle: String = ""
     dynamic var createDate: Date = Date()
-    let photoList: List<PhotoList> = List<PhotoList>()
+//    dynamic var uuid: String = UUID().uuidString
+    let photos: List<Photos> = List<Photos>()
+    
+//    override class func primaryKey() -> String? {
+//        return "uuid"
+//    }
 }
 
-class PhotoList: Object {
+class Photos: Object {
     dynamic var createDate: Date = Date()
     dynamic var image: Data = Data()
 }

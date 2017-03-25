@@ -16,26 +16,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        // 렘 마이그레이션
+        //=====================================================//
+        //                      Realm Migration                //
+        //====================================================//
 //        let migrationBlock: MigrationBlock = { migration, oldSchemaVersion in
 //            if oldSchemaVersion < 1 {
-//                migration.enumerateObjects(ofType: AlbumList.className(), { (oldObject, newObject) in
+//                migration.enumerateObjects(ofType: Album.className(), { (oldObject, newObject) in
 //                    if oldSchemaVersion < 1 {
+//                        let uuid = UUID().uuidString
+//                        newObject?["uuid"] = uuid
 //                    }
 //                })
-//                migration.enumerateObjects(ofType: PhotoList.className()) { oldObject, newObject in
+//                migration.enumerateObjects(ofType: Photos.className()) { oldObject, newObject in
 //                    if oldSchemaVersion < 1 {
-//                        // combine name fields into a single field
-//                        let detailTitle = oldObject!["detailTitle"] as! String
-//                            newObject?["memo"] = "\(detailTitle)"
+
 //                    }
 //                }
-//            }
+            
 //            print("Migration complete.")
 //        }
-//        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 0, migrationBlock: migrationBlock)
-
+//        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 3, migrationBlock: migrationBlock)
+        // default.realm 파일 경로(시뮬레이터일때만 사용가능)
+        guard let url = Realm.Configuration.defaultConfiguration.fileURL else { return true }
+        print("시뮬레이터일 경우: open . \(url)")
         return true
     }
 

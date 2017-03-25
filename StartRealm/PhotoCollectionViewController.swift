@@ -9,18 +9,28 @@
 import UIKit
 import RealmSwift
 
-class PhotoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
+class PhotoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegateFlowLayout {
     
-    var selectedAlbum: AlbumList!
+    var selectedAlbum: Album!
     private var startRealm: Realm!
-    private var photolList: List<PhotoList>!
+    private var photolList: List<Photos>!
+    var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startRealm = try! Realm()
-        photolList = selectedAlbum.photoList
+        photolList = selectedAlbum.photos
         
         self.navigationItem.title = selectedAlbum.title
+        //=====================================================//
+        //             Realm Notification Token                //
+        //====================================================//
+//        token = startRealm.addNotificationBlock({ (noti, startRealm) in
+//            self.collectionView?.reloadData()
+//        })
+        token = photolList.addNotificationBlock({ (change: RealmCollectionChange<List<Photos>>) in
+            self.collectionView?.reloadData()
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,7 +59,7 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemWidth = (collectionView.frame.size.width - 20)/3
+        let itemWidth = (collectionView.frame.size.width - 10)/3
         return CGSize(width: itemWidth, height: itemWidth)
     }
     
@@ -66,24 +76,22 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let newImage = info[UIImagePickerControllerOriginalImage] as! UIImage?
-        let newPhotoList = PhotoList()
-        newPhotoList.image = UIImageJPEGRepresentation(newImage!, 0.1)!
-        //****************************************************//
-        //                                                    //
-        //                렘 사진 데이터 저장(리스트)                //
-        //                                                    //
-        //****************************************************//        
+        let newPhotos = Photos()
+        newPhotos.image = UIImageJPEGRepresentation(newImage!, 0.01)!
+        //=====================================================//
+        //               Realm Write : 사진 저장                 //
+        //====================================================//
         do {
             try startRealm.write {
-                selectedAlbum?.photoList.append(newPhotoList)
+                selectedAlbum?.photos.append(newPhotos)
             }
         } catch {
             print("\(error)")
         }
         picker.dismiss(animated: true, completion: {
-            self.collectionView?.reloadData()
+//            self.collectionView?.reloadData()
         })
-    }
+            }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
@@ -94,14 +102,12 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         let alertController = UIAlertController(title: "사진 삭제", message: "", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: nil))
         alertController.addAction(UIAlertAction(title: "삭제", style: UIAlertActionStyle.destructive) { (action) -> Void in
-        //****************************************************//
-        //                                                    //
-        //                   렘 사진 데이터 삭제                   //
-        //                                                    //
-        //****************************************************//
+            //=====================================================//
+            //               Realm Delete : 사진 삭제                //
+            //====================================================//
             do {
                 try self.startRealm.write {
-                    self.selectedAlbum?.photoList.remove(objectAtIndex: selectedIndexPath.item)
+                    self.selectedAlbum?.photos.remove(objectAtIndex: selectedIndexPath.item)
                     self.collectionView?.reloadData()
                 }
             } catch {
