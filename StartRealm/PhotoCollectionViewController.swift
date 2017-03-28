@@ -11,9 +11,10 @@ import RealmSwift
 
 class PhotoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegateFlowLayout {
     
-    var selectedAlbum: Album!
     var startRealm: Realm!
-    var photolList: List<Photos>!
+    var photolList: List<Photo>!
+    var selectedAlbum: Album!
+
     var token: NotificationToken?
     
     override func viewDidLoad() {
@@ -28,7 +29,7 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         //        token = startRealm.addNotificationBlock({ (noti, startRealm) in
         //            self.collectionView?.reloadData()
         //        })
-        token = photolList.addNotificationBlock({ (change: RealmCollectionChange<List<Photos>>) in
+        token = photolList.addNotificationBlock({ (change: RealmCollectionChange<List<Photo>>) in
             self.collectionView?.reloadData()
         })
     }
@@ -76,14 +77,14 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let newImage = info[UIImagePickerControllerOriginalImage] as! UIImage?
-        let newPhotos = Photos()
-        newPhotos.image = UIImageJPEGRepresentation(newImage!, 0.01)!
+        let newPhoto = Photo()
+        newPhoto.image = UIImageJPEGRepresentation(newImage!, 0.01)!
         //=====================================================//
         //               Realm Write : 사진 저장                 //
         //====================================================//
         do {
             try startRealm.write {
-                selectedAlbum?.photos.append(newPhotos)
+                selectedAlbum?.photos.append(newPhoto)
             }
         } catch {
             print("\(error)")

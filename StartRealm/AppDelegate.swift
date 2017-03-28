@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                        newObject?["uuid"] = uuid
 //                    }
 //                })
-//                migration.enumerateObjects(ofType: Photos.className()) { oldObject, newObject in
+//                migration.enumerateObjects(ofType: Photo.className()) { oldObject, newObject in
 //                    if oldSchemaVersion < 1 {
 
 //                    }

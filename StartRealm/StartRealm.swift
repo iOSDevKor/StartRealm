@@ -13,13 +13,13 @@ class Album: Object {
     dynamic var title: String = ""
     dynamic var createDate: Date = Date()
 //    dynamic var uuid: String = UUID().uuidString
-    let photos: List<Photos> = List<Photos>()
+    let photos: List<Photo> = List<Photo>()
     
 //    override class func primaryKey() -> String? {
 //        return "uuid"
 }
 
-class Photos: Object {
+class Photo: Object {
     dynamic var createDate: Date = Date()
     dynamic var image: Data = Data()
 }

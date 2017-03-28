@@ -1,5 +1,5 @@
 //
-//  ListTableViewController.swift
+//  AlbumTableViewController.swift
 //  StartRealm
 //
 //  Created by Mijeong Jeon on 20/03/2017.
@@ -9,15 +9,15 @@
 import UIKit
 import RealmSwift
 
-class ListTableViewController: UITableViewController, UISearchBarDelegate {
+class AlbumTableViewController: UITableViewController, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var albums: Results<Album>!
     var startRealm: Realm!
-    var token: NotificationToken?
-    var searchActive: Bool = false
-
-    @IBOutlet weak var searchBar: UISearchBar!
     
+    var token: NotificationToken?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         startRealm = try! Realm()
@@ -160,5 +160,4 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
         albums = startRealm.objects(Album.self).filter("title contains[c] %@", searchText)
         self.tableView.reloadData()
     }
-
 }
