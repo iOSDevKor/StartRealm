@@ -17,7 +17,6 @@ class Album: Object {
     
 //    override class func primaryKey() -> String? {
 //        return "uuid"
-//    }
 }
 
 class Photos: Object {

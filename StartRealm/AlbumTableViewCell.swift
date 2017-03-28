@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 class AlbumTableViewCell: UITableViewCell {
     
     @IBOutlet weak var thumnailView: UIImageView!

@@ -25,9 +25,9 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         //=====================================================//
         //             Realm Notification Token                //
         //====================================================//
-//        token = startRealm.addNotificationBlock({ (noti, startRealm) in
-//            self.collectionView?.reloadData()
-//        })
+        //        token = startRealm.addNotificationBlock({ (noti, startRealm) in
+        //            self.collectionView?.reloadData()
+        //        })
         token = photolList.addNotificationBlock({ (change: RealmCollectionChange<List<Photos>>) in
             self.collectionView?.reloadData()
         })
@@ -89,9 +89,8 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
             print("\(error)")
         }
         picker.dismiss(animated: true, completion: {
-//            self.collectionView?.reloadData()
         })
-            }
+    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
@@ -107,8 +106,7 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
             //====================================================//
             do {
                 try self.startRealm.write {
-                    self.selectedAlbum?.photos.remove(objectAtIndex: selectedIndexPath.item)
-                    self.collectionView?.reloadData()
+                    self.startRealm.delete(self.photolList[selectedIndexPath.item])
                 }
             } catch {
                 print("\(error)")
