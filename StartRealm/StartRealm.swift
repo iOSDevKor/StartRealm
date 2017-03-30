@@ -11,7 +11,7 @@ import RealmSwift
 
 class Album: Object {
     dynamic var title: String = ""
-    dynamic var createDate: Date = Date()
+    dynamic let createDate: Date = Date()
 //    dynamic var uuid: String = UUID().uuidString
     let photos: List<Photo> = List<Photo>()
     
@@ -20,6 +20,6 @@ class Album: Object {
 }
 
 class Photo: Object {
-    dynamic var createDate: Date = Date()
+    let createDate: Date = Date()
     dynamic var image: Data = Data()
 }
