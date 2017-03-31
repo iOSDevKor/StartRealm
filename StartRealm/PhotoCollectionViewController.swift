@@ -7,26 +7,21 @@
 //
 
 import UIKit
-import RealmSwift
+// 0. import RealmSwift
 
 class PhotoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegateFlowLayout {
     
+    // 1. realm, seldectedAlbum, photos properties
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //=====================================================//
-        //                      Realm Init                    //
-        //====================================================//
+        // 1. Realm init
+       
+        // 2. 선택된 앨범의 사진 리스트 가져오기(사진 최신순 정렬)
+       
+        // 3. Navigation title = selectedAlbum title
         
-        
-        //=====================================================//
-        //               Realm Sort : 사진 최신 정렬              //
-        //====================================================//
-        
-        
-        //=====================================================//
-        //             Realm Notification Token                //
-        //====================================================//
-        
+        // 8. Realm Notigication - collectoinView reload
         
     }
     
@@ -40,17 +35,19 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+       // 4. collectionView item 수 = 앨범 내 사진 개수
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PhotoCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCollectionViewCell
-        
+        // 5. collectionView item image 설정
+
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        alertToEditorDelete(selectedIndexPath: indexPath)
+        alertToDelete(selectedIndexPath: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -59,7 +56,7 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     }
     
     
-    // MARK: 사진 추가
+    // MARK: ImagePickerView 사진 추가
     @IBAction func addImage(_ sender: UIBarButtonItem) {
         let imagePickerView = UIImagePickerController()
         imagePickerView.delegate = self
@@ -69,10 +66,8 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        //=====================================================//
-        //              Realm Write : 사진 추가                 //
-        //====================================================//
-
+        // 6. 선택된 사진 저장
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -80,10 +75,8 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     }
     
     // 사진 삭제
-    func alertToEditorDelete(selectedIndexPath: IndexPath) {
-        //=====================================================//
-        //              Realm Delete : 삭제 삭제                 //
-        //====================================================//
-
+    func alertToDelete(selectedIndexPath: IndexPath) {
+        // 7. 선택된 사진 삭제 알럿트
+        
     }
 }

@@ -9,17 +9,15 @@
 import Foundation
 import RealmSwift
 
+// Album Model
 class Album: Object {
     dynamic var title: String = ""
-    dynamic let createDate: Date = Date()
-//    dynamic var uuid: String = UUID().uuidString
+    dynamic var createDate: Date = Date()
     let photos: List<Photo> = List<Photo>()
-    
-//    override class func primaryKey() -> String? {
-//        return "uuid"
 }
 
+// Photo Model
 class Photo: Object {
-    let createDate: Date = Date()
+    dynamic var createDate: Date = Date()
     dynamic var image: Data = Data()
 }

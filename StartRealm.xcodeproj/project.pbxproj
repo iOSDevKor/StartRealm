@@ -72,8 +72,8 @@
 			children = (
 				E95F3B0D1E7FFBA9007E652D /* StartRealm.swift */,
 				E9BB634E1E8057C100704115 /* AlbumTableViewController.swift */,
-				E9BB63541E82BC7D00704115 /* AlbumTableViewCell.swift */,
 				E9BB63501E80D89800704115 /* PhotoCollectionViewController.swift */,
+				E9BB63541E82BC7D00704115 /* AlbumTableViewCell.swift */,
 				E9BB63521E80E87800704115 /* PhotoCollectionViewCell.swift */,
 				5348B7261E54856300D11430 /* Main.storyboard */,
 			);

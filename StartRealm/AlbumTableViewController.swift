@@ -7,32 +7,22 @@
 //
 
 import UIKit
-import RealmSwift
+// 0. import RealmSwift
 
 class AlbumTableViewController: UITableViewController, UISearchBarDelegate {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    // 1. realm, album properties
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        //=====================================================//
-        //                      Realm Init                    //
-        //====================================================//
-        
-        
-        //=====================================================//
-        //               Realm Sort : 앨범 최신 정렬              //
-        //====================================================//
-        
-        
-        //=====================================================//
-        //             Realm Notification Token                //
-        //====================================================//
+        // 2. Realm() init
 
+        // 3. Album Result & Sort
         
+        // 10. Realm Notigication - tableView reload
+
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -42,55 +32,47 @@ class AlbumTableViewController: UITableViewController, UISearchBarDelegate {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        // 4. TableView Cell Count = 앨범 수
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumCell", for: indexPath) as! AlbumTableViewCell
-        //=====================================================//
-        //           Realm Sort : 앨범 내 사진 최신 정렬            //
-        //====================================================//
-        
-        
+       
+        // 5. Cell text = 앨범 타이틀
+
+        // 6. Cell thumnail = 앨범에 속한 최신 사진
+
+    
         return cell
     }
     
-    // MARK: - Table view delegate
+    // 앨범명 입력받는 alert
+    @IBAction func addNewAlbum(_ sender: UIBarButtonItem) {
+        // 7. Realm Write - 앨범명 입력
+        alertForAlbumName(albumName: nil)
+    }
+    
+    func alertForAlbumName(albumName: Album?) {
+
+    }
+
     // 셀 슬라이드시 수정, 삭제
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .default, title: "삭제") { (deleteAction, indexPath) -> Void in
-            //=====================================================//
-            //              Realm Delete : 앨범 삭제                 //
-            //====================================================//
-
-        }
-        let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.normal, title: "수정") { (editAction, indexPath) -> Void in
-        }
-        return [deleteAction, editAction]
+        
+        return []
+    }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // 9. Realm Filter = 앨범명 검색
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
     }
     
-    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    }
-    
-    // MARK: - User action
-    // 앨범명 입력받는 alert
-    @IBAction func addNewList(_ sender: UIBarButtonItem) {
-        //=====================================================//
-        //             Realm Write : 앨범명 입력                 //
-        //====================================================//
-        
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //=====================================================//
-        //             Realm Filter : 앨범명 검색                //
-        //====================================================//
-        
+ 
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

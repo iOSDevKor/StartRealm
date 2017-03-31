@@ -13,7 +13,7 @@
         <!--아무거나 앨범-->
         <scene sceneID="RMa-vt-8cK">
             <objects>
-                <tableViewController id="fmx-6J-0NB" customClass="ListTableViewController" customModule="StartRealm" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="fmx-6J-0NB" customClass="AlbumTableViewController" customModule="StartRealm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="Boc-Di-d7O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C9l-Lo-qvJ" id="fil-x4-5Fh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앨범" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpe-ru-RHQ">
@@ -74,12 +74,11 @@
                     <navigationItem key="navigationItem" title="아무거나 앨범" id="e4b-7N-50x">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q1G-fz-dGL">
                             <connections>
-                                <action selector="addNewList:" destination="fmx-6J-0NB" id="Isu-NB-8cK"/>
+                                <action selector="addNewAlbum:" destination="fmx-6J-0NB" id="8WV-E8-gY8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="ms6-Zo-9Ct" id="ang-2a-zpe"/>
                         <outlet property="tableView" destination="Boc-Di-d7O" id="jfm-Y6-z1N"/>
                         <segue destination="WK7-9A-p2o" kind="show" identifier="Photos" id="OTJ-b1-cRz"/>
                     </connections>
